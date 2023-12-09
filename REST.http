@@ -1,0 +1,75 @@
+http://localhost:8080/api/v1/prendas
+###
+http://localhost:8080/api/v1/prendas/S012345670
+###
+http://localhost:8080/api/v1/prendas/S012345670?promo=true
+###
+http://localhost:8080/api/v1/prendas/S00000
+###
+http://localhost:8080/api/v1/promociones
+###
+http://localhost:8080/api/v1/promociones/N2023?prendas=true
+###
+http://localhost:8080/api/v1/promociones?limit=1&offset=0
+###
+DELETE http://localhost:8080/api/v1/promociones/N2023
+###
+PUT http://localhost:8080/api/v1/promociones/N2023/prendas HTTP/1.1
+content-type: application/json
+
+["S012345670","L987654321"]
+
+###
+DELETE http://localhost:8080/api/v1/promociones/N2023/prendas HTTP/1.1
+content-type: application/json
+
+["S012345670"]
+###
+PUT http://localhost:8080/api/v1/prendas/S012345670 HTTP/1.1
+content-type: application/json
+
+{
+    "precio": 10.50,
+    "categorias": ["ZAPATILLAS"]
+}
+###
+POST http://localhost:8080/api/v1/prendas/ HTTP/1.1
+content-type: application/json
+
+{
+    "id": "S012345670",
+    "precio": 20
+}
+
+###
+POST http://localhost:8080/api/v1/prendas/ HTTP/1.1
+content-type: application/json
+
+{
+    "id": "L987654321",
+    "precio": 30
+}
+###
+POST http://localhost:8080/api/v1/promociones/ HTTP/1.1
+content-type: application/json
+
+{
+
+    "nombre": "Navidades 2023",
+    "descuento": 50.00
+}
+###
+POST http://localhost:8080/api/v1/promociones/ HTTP/1.1
+content-type: application/json
+
+{
+    "id": "BF2023",
+    "nombre": "Black Friday 2023",
+    "descuento": 50
+}
+
+###
+DELETE http://localhost:8080/api/v1/prendas/L987654321 HTTP/1.1
+
+###
+http://localhost:8080/api/api/v1/prendas
